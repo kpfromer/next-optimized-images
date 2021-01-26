@@ -1,7 +1,5 @@
 # :sunrise: next-optimized-images [![npm version](https://badgen.net/npm/v/next-optimized-images)](https://www.npmjs.com/package/next-optimized-images) [![license](https://badgen.net/github/license/cyrilwanner/next-optimized-images)](https://github.com/cyrilwanner/next-optimized-images/blob/master/LICENSE) [![downloads](https://badgen.net/npm/dt/next-optimized-images)](https://www.npmjs.com/package/next-optimized-images)
 
-:heavy_exclamation_mark: **Canary disclaimer** :heavy_exclamation_mark:
-
 > Any **feedback, ideas, bugs**, or anything else about this new version is very much appreciated, either in the [RFC issue](https://github.com/cyrilwanner/next-optimized-images/issues/120) or in a separate issue.
 
 This is a canary version of `next-optimized-images`. If you want to use a non-canary version, please switch to the [master branch](https://github.com/cyrilwanner/next-optimized-images/tree/master).
@@ -310,8 +308,6 @@ export default () => (
 ```
 
 #### ?trace
-
-> Currently not supported
 
 With the `?trace` resource query, you can generate [SVG image outlines](https://twitter.com/mikaelainalem/status/918213244954861569) which can be used as a placeholder while loading the original image.
 
