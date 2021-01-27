@@ -51,7 +51,11 @@ const getHandledFilesRegex = (handledImageTypes: Record<string, boolean>): RegEx
  * @returns {object}
  */
 const withOptimizedImages = (
-  nextConfig: { images?: { handleImages?: string[] }; assetPrefix?: string; webpack?: unknown } = {},
+  nextConfig: {
+    images?: { handleImages?: string[] };
+    assetPrefix?: string;
+    webpack?: unknown;
+  } = {},
 ) => {
   return {
     ...nextConfig,
@@ -64,7 +68,14 @@ const withOptimizedImages = (
 
       const enrichedConfig = config;
       const handleImages = getHandledImageTypes(
-        (nextConfig.images && nextConfig.images.handleImages) || ['jpeg', 'png', 'svg', 'webp', 'gif', 'ico'],
+        (nextConfig.images && nextConfig.images.handleImages) || [
+          'jpeg',
+          'png',
+          'svg',
+          'webp',
+          'gif',
+          'ico',
+        ],
       );
 
       // add optimized-images-loader
@@ -72,7 +83,7 @@ const withOptimizedImages = (
         test: getHandledFilesRegex(handleImages),
         use: [
           {
-            loader: 'optimized-images-loader',
+            loader: 'kpfromer-optimized-images-loader',
             options: {
               outputPath: 'static/chunks/images/',
               publicPath: nextConfig.assetPrefix
