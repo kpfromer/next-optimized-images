@@ -7,6 +7,7 @@
 If your project depends on them, you have to wait a little more, but those features will get added
 again soon.
 
+- **gatsby-image** like `Img` component (when used with `placeholder` property)
 - **Image optimization is performed either in node or WebAssembly** - there is no need for imagemin
   plugins anymore and so no native binaries are required
 - **Build cache for images** - results in way faster builds and images are also optimized in the dev
@@ -35,7 +36,7 @@ again soon.
 ## Installation
 
 ```
-npm install next-optimized-images
+npm install kpfromer-next-optimized-images
 ```
 
 Requirements:
@@ -48,7 +49,7 @@ Enable the plugin in your Next.js configuration file:
 ```javascript
 // next.config.js
 const withPlugins = require('next-compose-plugins');
-const optimizedImages = require('next-optimized-images');
+const optimizedImages = require('kpfromer-next-optimized-images');
 
 module.exports = withPlugins([
   [
@@ -68,7 +69,7 @@ have a `.babelrc` file, create one with the following content:
 ```json
 {
   "presets": ["next/babel"],
-  "plugins": ["react-optimized-image/plugin"]
+  "plugins": ["kpfromer-react-optimized-image/plugin"]
 }
 ```
 
@@ -80,13 +81,13 @@ If you are using typescript, add the following line to your `next-env.d.ts` file
 
 See the [configuration](#configuration) section for all available options.
 
-The example above uses [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)
-for a cleaner API when using many plugins, see its readme for a more detailed example.
+The example above uses [next-compose-plugins](https://github.com/kpfromer/next-compose-plugins) for
+a cleaner API when using many plugins, see its readme for a more detailed example.
 `next-optimized-images` also works with the standard plugin api:
 
 ```javascript
 // next.config.js
-const withOptimizedImages = require('next-optimized-images');
+const withOptimizedImages = require('kpfromer-next-optimized-images');
 
 module.exports = withOptimizedImages({
   /* config for next-optimized-images */
@@ -100,7 +101,7 @@ You can now import or require your images directly in your react components:
 
 ```javascript
 import React from 'react';
-import Img from 'react-optimized-image';
+import Img from 'kpfromer-react-optimized-image';
 import MyImage from './images/my-image.jpg';
 
 export default () => (
@@ -157,7 +158,7 @@ fallback and provide different sizes for different viewports.
 ##### Usage
 
 ```javascript
-import Img from 'react-optimized-image';
+import Img from 'kpfromer-react-optimized-image';
 import MyImage from './images/my-image.jpg';
 
 export default () => (
@@ -195,6 +196,8 @@ export default () => (
  */
 ```
 
+**TODO:** ADD PLACEHOLDER SECTION
+
 ##### Properties
 
 | Prop            | Required |        Type         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -219,7 +222,7 @@ component which will reference it by the URL.
 ##### Usage
 
 ```javascript
-import { Svg } from 'react-optimized-image';
+import { Svg } from 'kpfromer-react-optimized-image';
 import Icon from './icons/my-icon.svg';
 
 export default () => (
@@ -257,7 +260,7 @@ the import or require statement are also possible.
 - [`?colors`](#colors): Extract the dominant colors of an image
 - [`?width`](#width): Resize an image to the given width
 - [`?height`](#height): Resize an image to the given height
-- [`?trace`](#trace): Use traced outlines as loading placeholder _(currently not supported)_
+- [`?trace`](#trace): Use traced outlines as loading placeholder
 - [`?sprite`](#sprite): Use SVG sprites _(currently not supported)_
 
 #### ?include
@@ -324,6 +327,8 @@ export default () => (
 ```
 
 #### ?trace
+
+**TODO** describe query chaining
 
 With the `?trace` resource query, you can generate
 [SVG image outlines](https://twitter.com/mikaelainalem/status/918213244954861569) which can be used
@@ -517,7 +522,7 @@ inherited from the `default` key.
 
 ```javascript
 import React from 'react';
-import Img from 'react-optimized-image';
+import Img from 'kpfromer-react-optimized-image';
 import MyImage from './images/my-image.jpg';
 
 export default () => (
@@ -533,7 +538,5 @@ export default () => (
 
 ## License
 
-Licensed under the [MIT](https://github.com/cyrilwanner/next-optimized-images/blob/master/LICENSE)
+Licensed under the [MIT](https://github.com/kpfromer/next-optimized-images/blob/master/LICENSE)
 license.
-
-© Copyright Cyril Wanner
