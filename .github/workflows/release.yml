@@ -1,6 +1,6 @@
 name: Release
 
-# Run the workflow when a Pull Request is opened or when changes are pushed to main
+# Run the workflow when a Pull Request is opened or when changes are pushed to master
 on:
   pull_request:
   push:
@@ -8,8 +8,8 @@ on:
 
 jobs:
   release:
-    # Only release on push to main
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Only release on push to master
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
